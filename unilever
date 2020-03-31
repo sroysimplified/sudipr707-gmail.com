@@ -12,3 +12,19 @@ train.head(2)
 
 test = pd.read_csv("/content/Test dataset v1.xlsx - Sheet 1.csv")
 test.head(5)
+
+x_train = train.drop("EQ", axis=1)
+y_train = train["EQ"]
+
+x_test = test.drop("EQ", axis=1)
+y_test = test["EQ"]
+
+# we have now created our training and testing data which we can use for analysis
+
+# Mean of the Target variable [Mean = 718]
+mean=y_train.mean
+mean
+
+# we will see the positive and negative correlations among the X_features and the Target variable Y [ "EQ" ]
+correlation=train.corr()['EQ'].sort_values()
+correlation
